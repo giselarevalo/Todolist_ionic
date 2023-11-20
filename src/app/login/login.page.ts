@@ -18,8 +18,8 @@ export class LoginPage {
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 2000, // Duración del toast en milisegundos
-      position: 'top', // Puedes ajustar la posición del toast
+      duration: 2000, 
+      position: 'top', 
     });
     toast.present();
   }
@@ -37,9 +37,10 @@ export class LoginPage {
     const isAuthenticated = this.authService.login(this.email, this.password);
 
     if (isAuthenticated) {
+      this.presentToast('¡Bienvenido Crack!');
       this.router.navigate(['/task-list']); 
     } else {
-      this.presentToast('Error de inicio de sesión');
+      this.presentToast('Las credenciales son invalidas');
       
     }
   }
