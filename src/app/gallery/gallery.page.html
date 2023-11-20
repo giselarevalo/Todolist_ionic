@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Galeria</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" color="tertiary" size="small" (click)="goToList()">Volver al listado</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <swiper-container (slidechange)="swiperSlideChanged($event)"
+  [loop]="true"
+  [pagination]="true">
+    <swiper-slide *ngFor="let image of images" >
+      <img [src]="image" alt="Imagen">
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
